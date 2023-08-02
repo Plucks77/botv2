@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  music-disc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: musica
+    restart: no
+    ports:
+      - 33333:33333
+    environment:
+      TOKEN: ""
