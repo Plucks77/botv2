@@ -92,6 +92,7 @@ export default {
         .catch(console.error);
     }
 
+
     const newQueue = new MusicQueue({
       interaction,
       textChannel: interaction.channel! as TextChannel,
@@ -103,6 +104,13 @@ export default {
     });
 
     bot.queues.set(interaction.guild!.id, newQueue);
+
+    if (banidos.includes(username)) {
+      const gemido = await Song.from(randomGemido, randomGemido);
+      bot.queues.get(interaction.guild!.id)!.enqueue(gemido);
+    }
+
+    bot.queues.get(interaction.guild!.id)!.enqueue(song);
 
     interaction.deleteReply().catch(console.error);
   }
