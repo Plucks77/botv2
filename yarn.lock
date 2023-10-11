@@ -1524,10 +1524,10 @@ onetime@^5.1.0:
   dependencies:
     mimic-fn "^2.1.0"
 
-opusscript@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/opusscript/-/opusscript-0.1.0.tgz#0d8db7b5202b91c75d9c511f2621c5c93e9b0055"
-  integrity sha512-Jc1d2u7AutNcUCoSpshhStW4CVAZXqh8n832ZTFUwZowof+xq2JW4umsWwAUOdtczn2z0UJMkUoTYBFT8qto9g==
+opusscript@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/opusscript/-/opusscript-0.1.1.tgz#322c126b753ddbf9b0b209d0060a432805b6a34d"
+  integrity sha512-mL0fZZOUnXdZ78woRXp18lApwpp0lF5tozJOD1Wut0dgrA9WuQTgSels/CSmFleaAZrJi/nci5KOVtbuxeWoQA==
 
 ora@^5.4.1:
   version "5.4.1"
