@@ -1,7 +1,8 @@
-import { AudioResource, createAudioResource, StreamType } from "@discordjs/voice";
-import youtube from "youtube-sr";
+import { AudioResource, StreamType, createAudioResource } from "@discordjs/voice";
+import { isURL, videoPattern } from "../utils/patterns";
+
 import { i18n } from "../utils/i18n";
-import { videoPattern, isURL } from "../utils/patterns";
+import youtube from "youtube-sr";
 const { stream , video_basic_info } = require('play-dl');
 
 export interface SongData {

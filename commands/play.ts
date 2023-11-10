@@ -1,6 +1,6 @@
 import { ChatInputCommandInteraction, PermissionsBitField, SlashCommandBuilder, TextChannel } from "discord.js";
 import { DiscordGatewayAdapterCreator, joinVoiceChannel } from "@discordjs/voice";
-import { banidos, randomGemido } from "../utils/fuck_rabelao";
+import { banidos, gemidoEnabled, randomGemido } from "../utils/fuck_rabelao";
 
 import { MusicQueue } from "../structs/MusicQueue";
 import { Song } from "../structs/Song";
@@ -80,7 +80,7 @@ export default {
     }
 
     if (queue) {
-      if (banidos.includes(username)) {
+      if (banidos.includes(username) && gemidoEnabled) {
         const gemido = await Song.from(randomGemido, randomGemido);
         queue.enqueue(gemido);
       }
@@ -91,7 +91,6 @@ export default {
         .send({ content: i18n.__mf("play.queueAdded", { title: song.title, author: interaction.user.id }) })
         .catch(console.error);
     }
-
 
     const newQueue = new MusicQueue({
       interaction,
@@ -105,7 +104,7 @@ export default {
 
     bot.queues.set(interaction.guild!.id, newQueue);
 
-    if (banidos.includes(username)) {
+    if (banidos.includes(username) && gemidoEnabled) {
       const gemido = await Song.from(randomGemido, randomGemido);
       bot.queues.get(interaction.guild!.id)!.enqueue(gemido);
     }
